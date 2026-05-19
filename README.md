@@ -121,7 +121,7 @@ plugins/                 # 插件
 
 ## 关注作者
 
-📕 **小红书**：[上杉的小马驹🐴](https://www.xiaohongshu.com/user/profile/xxx)  
+📕 **小红书**：上杉的小马驹🐴
 💻 **GitHub**：[BOBcool1989/tiny-world-builder](https://github.com/BOBcool1989/tiny-world-builder)
 
 有问题或建议？欢迎提 Issue！
