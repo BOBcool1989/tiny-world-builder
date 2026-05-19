@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tiny World Builder</title>
+<title>迷你世界构建器</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -2910,84 +2910,84 @@
   </div>
 
   <div class="brand">
-    <div class="title">Tiny World <em>Builder</em></div>
-    <div class="sub">Tap to place · drag to orbit · pinch or scroll to zoom</div>
+    <div class="title">Mini World <em>Builder</em></div>
+    <div class="sub">点击放置 · 拖动旋转 · 双指或滚轮缩放</div>
     <!-- Kept for JS to relocate into the toolbar's world-slot. -->
     <button type="button" class="brand-title-btn" id="world-menu-btn" aria-haspopup="menu" aria-expanded="false">
-      <span id="world-menu-label">My world</span>
+      <span id="world-menu-label">我的世界</span>
       <svg class="brand-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
   </div>
 
   <!-- View modes popup -->
   <div class="topbar-popup" id="view-popup" hidden role="menu">
-    <div class="topbar-popup-title">Camera view</div>
+    <div class="topbar-popup-title">相机视角</div>
     <button class="view-option" data-view="topdown" role="menuitem">
       <span class="view-thumb" aria-hidden="true">
         <svg viewBox="0 0 32 28" width="36" height="32"><rect x="6" y="6" width="20" height="16" rx="1" fill="#a08454"/><rect x="9" y="9" width="14" height="10" fill="#cdb98a"/><rect x="11" y="11" width="3" height="3" fill="#86b53e"/><rect x="18" y="14" width="3" height="3" fill="#86b53e"/></svg>
       </span>
-      <span class="view-body"><strong>Top-down</strong><em>bird's eye, straight down</em></span>
+      <span class="view-body"><strong>俯视</strong><em>鸟瞰，正上方</em></span>
     </button>
     <button class="view-option" data-view="ortho" role="menuitem">
       <span class="view-thumb" aria-hidden="true">
         <svg viewBox="0 0 32 28" width="36" height="32"><path d="M16 4 28 11l-12 7L4 11z" fill="#cdb98a"/><path d="M16 18l12-7v9l-12 7z" fill="#a08454"/><path d="M16 18l-12-7v9l12 7z" fill="#8a6f44"/></svg>
       </span>
-      <span class="view-body"><strong>Isometric</strong><em>angled overhead</em></span>
+      <span class="view-body"><strong>等距</strong><em>斜俯视</em></span>
     </button>
     <button class="view-option" data-view="soft" role="menuitem">
       <span class="view-thumb" aria-hidden="true">
         <svg viewBox="0 0 32 28" width="36" height="32"><path d="M16 7 27 12l-11 6L5 12z" fill="#cdb98a"/><path d="M16 18l11-6v8l-11 5z" fill="#a08454"/><path d="M16 18l-11-6v8l11 5z" fill="#8a6f44"/></svg>
       </span>
-      <span class="view-body"><strong>Soft</strong><em>tilted perspective</em></span>
+      <span class="view-body"><strong>柔和</strong><em>倾斜透视</em></span>
     </button>
     <button class="view-option" data-view="perspective" role="menuitem">
       <span class="view-thumb" aria-hidden="true">
         <svg viewBox="0 0 32 28" width="36" height="32"><path d="M16 10 26 12l-10 4L6 12z" fill="#cdb98a"/><path d="M16 16l10-4v6l-10 4z" fill="#a08454"/><path d="M16 16l-10-4v6l10 4z" fill="#8a6f44"/></svg>
       </span>
-      <span class="view-body"><strong>Perspective</strong><em>close orbit</em></span>
+      <span class="view-body"><strong>透视</strong><em>近距离环绕</em></span>
     </button>
     <button class="view-option" data-view="fp" role="menuitem">
       <span class="view-thumb" aria-hidden="true">
         <svg viewBox="0 0 32 28" width="36" height="32"><circle cx="16" cy="13" r="3" fill="#cdb98a"/><path d="M14 17h4l-2 8z" fill="#a08454"/><path d="M10 22l6-4 6 4" stroke="#8a6f44" stroke-width="1.5" fill="none"/></svg>
       </span>
-      <span class="view-body"><strong>Walk (first-person)</strong><em>WASD · mouse · space jumps · esc exits</em></span>
+      <span class="view-body"><strong>行走（第一人称）</strong><em>WASD · 鼠标 · 空格跳跃 · esc退出</em></span>
     </button>
   </div>
 
   <!-- Time / season / weather popup -->
   <div class="topbar-popup time-popup" id="time-popup" hidden role="menu">
-    <div class="topbar-popup-title">Time &amp; weather</div>
+    <div class="topbar-popup-title">时间与天气</div>
     <label class="time-row">
-      <span class="time-row-label">Time of day</span>
+      <span class="time-row-label">时刻</span>
       <input id="time-range" type="range" min="0" max="1440" step="5" value="720" />
       <span class="time-row-val" id="time-readout">12:00</span>
     </label>
     <div class="time-row time-row-pills">
-      <span class="time-row-label">Season</span>
+      <span class="time-row-label">季节</span>
       <div class="pill-row" id="season-pills">
-        <button class="pill" data-season="spring">Spring</button>
-        <button class="pill" data-season="summer">Summer</button>
-        <button class="pill" data-season="autumn">Autumn</button>
-        <button class="pill" data-season="winter">Winter</button>
+        <button class="pill" data-season="spring">春</button>
+        <button class="pill" data-season="summer">夏</button>
+        <button class="pill" data-season="autumn">秋</button>
+        <button class="pill" data-season="winter">冬</button>
       </div>
     </div>
     <div class="time-row time-row-pills">
-      <span class="time-row-label">Weather</span>
+      <span class="time-row-label">天气</span>
       <div class="pill-row" id="weather-pills">
-        <button class="pill" data-weather="clear">Clear</button>
-        <button class="pill" data-weather="cloudy">Cloudy</button>
-        <button class="pill" data-weather="rain">Rain</button>
-        <button class="pill" data-weather="storm">Storm</button>
-        <button class="pill" data-weather="snow">Snow</button>
+        <button class="pill" data-weather="clear">晴</button>
+        <button class="pill" data-weather="cloudy">阴</button>
+        <button class="pill" data-weather="rain">雨</button>
+        <button class="pill" data-weather="storm">暴风雨</button>
+        <button class="pill" data-weather="snow">雪</button>
       </div>
     </div>
     <label class="time-row">
-      <span class="time-row-label">Weather intensity</span>
+      <span class="time-row-label">天气强度</span>
       <input id="weather-intensity" type="range" min="25" max="300" step="5" value="25" />
       <span class="time-row-val" id="weather-intensity-readout">25%</span>
     </label>
     <label class="time-row">
-      <span class="time-row-label">Splashes / buildup</span>
+      <span class="time-row-label">飞溅/积聚</span>
       <input id="weather-splashes" type="range" min="0" max="300" step="5" value="150" />
       <span class="time-row-val" id="weather-splashes-readout">150%</span>
     </label>
@@ -2999,112 +2999,112 @@
   <!-- World-name popup menu -->
   <div class="world-menu" id="world-menu" hidden role="menu">
     <div class="world-menu-head">
-      <input class="world-menu-input" id="world-menu-name" placeholder="Whispering Vale" maxlength="80" aria-label="World name" />
-      <button class="world-menu-rename" id="world-menu-rename" data-tooltip="Save name">
+      <input class="world-menu-input" id="world-menu-name" placeholder="我的世界" maxlength="80" aria-label="世界名称" />
+      <button class="world-menu-rename" id="world-menu-rename" data-tooltip="保存名称">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </button>
     </div>
     <div class="world-menu-section">
       <button class="world-menu-item" data-action="new" role="menuitem">
         <span class="world-menu-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        <span class="world-menu-label">New world</span>
-        <span class="world-menu-hint">clear to grass</span>
+        <span class="world-menu-label">新建世界</span>
+        <span class="world-menu-hint">清空为草地</span>
       </button>
       <button class="world-menu-item" data-action="duplicate" role="menuitem">
         <span class="world-menu-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span>
-        <span class="world-menu-label">Duplicate</span>
-        <span class="world-menu-hint">copy of this world</span>
+        <span class="world-menu-label">复制</span>
+        <span class="world-menu-hint">复制这个世界</span>
       </button>
       <button class="world-menu-item" data-action="generate" role="menuitem" data-ai-interface>
         <span class="world-menu-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg></span>
-        <span class="world-menu-label">Generate from prompt…</span>
+        <span class="world-menu-label">从提示词生成…</span>
         <span class="world-menu-hint">⌘G</span>
       </button>
     </div>
     <div class="world-menu-section" id="world-menu-slots">
-      <div class="world-menu-section-title">My worlds</div>
+      <div class="world-menu-section-title">我的世界</div>
       <ul class="world-menu-list" id="world-menu-list"></ul>
-      <div class="world-menu-empty" id="world-menu-empty" hidden>No saved worlds yet. Build one and choose “Save as new”.</div>
+      <div class="world-menu-empty" id="world-menu-empty" hidden>还没有保存的世界。创建一个后选择"另存为新世界"。</div>
     </div>
     <div class="world-menu-foot">
       <button class="world-menu-foot-btn" data-action="save-as" role="menuitem">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-        Save as new
+        另存为新世界
       </button>
       <button class="world-menu-foot-btn" data-action="manage" role="menuitem">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-        Cloud builds
+        云端建筑
       </button>
     </div>
   </div>
 
   <div class="unsaved-banner" id="unsaved-banner" hidden>
     <span class="dot" aria-hidden="true"></span>
-    <span id="unsaved-banner-text">Areas outside your home grid aren't saved</span>
+    <span id="unsaved-banner-text">主网格以外的区域不会被保存</span>
   </div>
 
-  <div id="audio-panel" class="audio-panel" role="group" aria-label="Sound controls">
+    <div class="audio-panel" role="group" aria-label="声音控制">
     <div class="audio-row">
-      <button type="button" class="audio-mute" id="audio-music-mute" data-tooltip="Mute music" aria-label="Mute music">
+      <button type="button" class="audio-mute" id="audio-music-mute" data-tooltip="静音" aria-label="静音音乐">
         <svg class="ic-on" viewBox="0 0 24 24"><path d="M9 18V6l11-3v12"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="15" r="3"/></svg>
         <svg class="ic-off" viewBox="0 0 24 24"><path d="M9 18V6l11-3v12"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="15" r="3"/><path d="M3 3l18 18"/></svg>
       </button>
-      <input type="range" id="audio-music-vol" min="0" max="100" step="1" aria-label="Music volume" />
+      <input type="range" id="audio-music-vol" min="0" max="100" step="1" aria-label="音乐音量" />
     </div>
     <div class="audio-row">
-      <button type="button" class="audio-mute" id="audio-sfx-mute" data-tooltip="Mute SFX" aria-label="Mute SFX">
+      <button type="button" class="audio-mute" id="audio-sfx-mute" data-tooltip="静音音效" aria-label="静音音效">
         <svg class="ic-on" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
         <svg class="ic-off" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M22 9l-6 6"/><path d="M16 9l6 6"/></svg>
       </button>
-      <input type="range" id="audio-sfx-vol" min="0" max="100" step="1" aria-label="SFX volume" />
+      <input type="range" id="audio-sfx-vol" min="0" max="100" step="1" aria-label="音效音量" />
     </div>
   </div>
 
   <div class="appbar">
-    <a class="btn icon" id="github-link" href="https://github.com/jasonkneen/tiny-world-builder" target="_blank" rel="noopener noreferrer" data-tooltip="View on GitHub" aria-label="View Tiny World Builder on GitHub">
+    <a class="btn icon" id="github-link" href="https://github.com/jasonkneen/tiny-world-builder" target="_blank" rel="noopener noreferrer" data-tooltip="在 GitHub 上查看" aria-label="在 GitHub 上查看 Mini World Builder">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5a13.4 13.4 0 0 0-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 18c-4.5 2-5-2-7-2"/></svg>
     </a>
-    <button class="btn icon" id="account-btn" data-tooltip="My account" aria-label="My account" hidden>
+    <button class="btn icon" id="account-btn" data-tooltip="我的账户" aria-label="我的账户" hidden>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
     </button>
   </div>
 
   <div class="controls">
-    <button class="btn icon" id="home" data-tooltip="Center on your grid" aria-label="Center on your 8 by 8 grid">
+    <button class="btn icon" id="home" data-tooltip="居中到网格" aria-label="居中到 8×8 网格">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2h-4v-7H9v7H5a2 2 0 0 1-2-2z"/></svg>
     </button>
-    <button class="btn icon" id="persp" data-tooltip="Perspective" aria-label="Toggle camera mode">
+    <button class="btn icon" id="persp" data-tooltip="透视/正视" aria-label="切换相机模式">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05"/><path d="M12 22.08V12"/></svg>
     </button>
-    <button class="btn icon" id="view-modes" data-tooltip="View modes" aria-label="Pick a camera view">
+    <button class="btn icon" id="view-modes" data-tooltip="视角模式" aria-label="选择相机视角">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
     </button>
-    <button class="btn icon" id="time-weather" data-tooltip="Time &amp; weather" aria-label="Time and weather">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+<button class="btn icon" id="time-weather" data-tooltip="时间与天气" aria-label="Time and weather">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
     </button>
-    <button class="btn icon" id="showcase-mode" data-tooltip="Showcase mode (hide chrome + orbit)" aria-label="Showcase mode">
+    <button class="btn icon" id="showcase-mode" data-tooltip="展示模式（隐藏界面+自动旋转）" aria-label="展示模式">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg>
     </button>
-    <button class="btn icon" id="dev-mode" data-tooltip="Developer overlay (`)" aria-label="Developer overlay">
+    <button class="btn icon" id="dev-mode" data-tooltip="开发者面板" aria-label="开发者覆盖层">
       <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
     </button>
-    <button class="btn icon" id="reset" data-tooltip="Reset world" aria-label="Reset world">
+    <button class="btn icon" id="reset" data-tooltip="重置世界" aria-label="重置世界">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
     </button>
-    <button class="btn icon" id="export" data-tooltip="Export JSON" aria-label="Export world as JSON">
+    <button class="btn icon" id="export" data-tooltip="导出 JSON" aria-label="导出世界为 JSON">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
     </button>
-    <button class="btn icon" id="import" data-tooltip="Import JSON" aria-label="Import world from JSON">
+    <button class="btn icon" id="import" data-tooltip="导入 JSON" aria-label="从 JSON 导入世界">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg>
     </button>
     <input type="file" id="import-file" accept=".json,application/json" hidden />
-    <button class="btn icon" id="generate" data-tooltip="Generate from prompt" aria-label="Generate world from prompt" data-ai-interface hidden>
+    <button class="btn icon" id="generate" data-tooltip="AI 生成" aria-label="根据提示词生成世界" data-ai-interface hidden>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
     </button>
-    <button class="btn icon" id="clear" data-tooltip="Clear to grass" aria-label="Clear world to grass">
+    <button class="btn icon" id="clear" data-tooltip="清空为草地" aria-label="清空世界为草地">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>
     </button>
-    <button class="btn icon" id="render-settings" data-tooltip="Settings" aria-label="Settings">
+    <button class="btn icon" id="render-settings" data-tooltip="设置" aria-label="设置">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
     </button>
   </div>
@@ -3116,38 +3116,38 @@
   <div id="account-modal" class="modal" hidden>
     <form class="modal-card" role="dialog" aria-modal="true" aria-labelledby="account-title" onsubmit="return false">
       <div class="modal-head">
-        <strong id="account-title">My Account</strong>
-        <button class="modal-close" id="account-close" title="Close">×</button>
+        <strong id="account-title">我的账户</strong>
+        <button class="modal-close" id="account-close" title="关闭">×</button>
       </div>
       <div class="tab-bar">
-        <button type="button" id="tab-profile" class="active">Profile</button>
-        <button type="button" id="tab-saves">My Builds</button>
-        <button type="button" id="tab-api">Developer</button>
+        <button type="button" id="tab-profile" class="active">个人资料</button>
+        <button type="button" id="tab-saves">我的建筑</button>
+        <button type="button" id="tab-api">开发者</button>
       </div>
       <div id="panel-profile">
         <div class="profile-section">
-          <label>Username
+          <label>用户名
             <input type="text" id="profile-username" autocomplete="username" placeholder="lowercase_name" />
-            <div class="profile-hint">Unique public handle. 3-24 chars: lowercase letters, numbers, underscores.</div>
+            <div class="profile-hint">唯一公开标识符，3-24个字符：字母小写、数字、下划线。</div>
           </label>
         </div>
         <div class="profile-section">
-          <label>Display name
-            <input type="text" id="profile-display-name" autocomplete="name" placeholder="Your display name" />
+          <label>显示名称
+            <input type="text" id="profile-display-name" autocomplete="name" placeholder="你的显示名称" />
           </label>
         </div>
         <div class="profile-section">
-          <label>About
-            <textarea id="profile-about" placeholder="A short bio"></textarea>
+          <label>简介
+            <textarea id="profile-about" placeholder="简短自我介绍"></textarea>
           </label>
         </div>
         <div class="profile-section">
-          <label>Photo
+          <label>照片
             <div class="profile-photo-row">
-              <img class="profile-avatar-preview" id="profile-avatar-img" src="" alt="Profile photo preview" hidden />
+              <img class="profile-avatar-preview" id="profile-avatar-img" src="" alt="头像预览" hidden />
               <div class="profile-photo-actions">
                 <input type="file" id="profile-photo-file" accept="image/png,image/jpeg,image/webp,image/gif" />
-                <button class="btn" id="profile-photo-clear" type="button">Remove photo</button>
+                <button class="btn" id="profile-photo-clear" type="button">移除照片</button>
               </div>
             </div>
             <input type="hidden" id="profile-image" />
@@ -3155,48 +3155,48 @@
         </div>
         <div class="modal-foot">
           <span id="profile-status"></span>
-          <button class="btn" id="profile-save" type="button">Save Profile</button>
+          <button class="btn" id="profile-save" type="button">保存资料</button>
         </div>
       </div>
       <div id="panel-saves" hidden>
         <div class="modal-foot" style="margin-bottom: 10px;">
           <label style="flex:1;">
-            <input type="text" id="save-name" placeholder="Name this build..." style="width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:13px;" />
+            <input type="text" id="save-name" placeholder="为你的建筑命名……" style="width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:13px;" />
           </label>
-          <button class="btn" id="save-current" type="button">Save Current</button>
+          <button class="btn" id="save-current" type="button">保存当前</button>
         </div>
         <ul class="saves-list" id="saves-list"></ul>
-        <div class="save-empty" id="saves-empty" hidden>No saved builds yet. Build a world and save it above.</div>
+        <div class="save-empty" id="saves-empty" hidden>还没有保存的建筑。创建后将世界保存到云端即可在这里看到。</div>
       </div>
       <div id="panel-api" hidden>
         <div class="profile-section">
-          <label>API keys
-            <div class="profile-hint">Bearer tokens for external integrations. Treat them like passwords — anyone with one can drive your world.</div>
+          <label>API 密钥
+            <div class="profile-hint">用于外部集成的Bearer令牌。请像对待密码一样保管它们——持有密钥者可以操控你的世界。</div>
           </label>
           <ul class="api-keys-list" id="api-keys-list"></ul>
           <div class="modal-foot" style="margin-top:8px;">
             <label style="flex:1;">
-              <input type="text" id="api-key-label" placeholder="Label (e.g. zapier)" style="width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:13px;" />
+              <input type="text" id="api-key-label" placeholder="标签（例如 zapier）" style="width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:13px;" />
             </label>
-            <button class="btn" id="api-key-generate" type="button">Generate key</button>
+            <button class="btn" id="api-key-generate" type="button">生成密钥</button>
           </div>
           <div class="api-key-reveal" id="api-key-reveal" hidden></div>
         </div>
         <div class="profile-section">
-          <label>Outbound webhook URL
+          <label>出站 Webhook URL
             <input type="url" id="api-webhook-url" autocomplete="off" placeholder="https://example.com/hook" />
-            <div class="profile-hint">JSON-POSTed on place / erase / clear / save events. Sent with <code>Authorization: Bearer &lt;key&gt;</code>.</div>
+            <div class="profile-hint">在放置/擦除/清空/保存事件时发送JSON POST请求。随请求附带<code>Authorization: Bearer &lt;密钥前缀&gt;</code>认证头。</div>
           </label>
         </div>
         <div class="profile-section">
-          <label>Inbound SSE relay URL
+          <label>入站 SSE 中继 URL
             <input type="url" id="api-sse-url" autocomplete="off" placeholder="https://example.com/sse" />
-            <div class="profile-hint">EventSource the browser will subscribe to. Push commands here to drive the world from outside.</div>
+            <div class="profile-hint">浏览器订阅的EventSource。通过此URL推送命令以从外部操控世界。</div>
           </label>
         </div>
         <div class="modal-foot">
           <span id="api-status"></span>
-          <button class="btn" id="api-save" type="button">Save</button>
+          <button class="btn" id="api-save" type="button">保存</button>
         </div>
       </div>
     </form>
@@ -3204,8 +3204,8 @@
 
   <div id="auth-modal" class="auth-modal" hidden>
     <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="auth-title">
-      <div class="auth-title" id="auth-title">Tiny World <em>Builder</em></div>
-      <div class="auth-subtitle">Sign in to start building</div>
+      <div class="auth-title" id="auth-title">Mini World <em>Builder</em></div>
+      <div class="auth-subtitle">登录以开始构建</div>
       <div id="auth-error" class="auth-error" hidden></div>
       <div id="auth-success" class="auth-success" hidden></div>
 
@@ -3214,21 +3214,21 @@
         <div id="auth-oauth-login" class="auth-oauth-section" hidden>
           <button class="auth-google-btn" id="auth-google-login" type="button">
             <svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.01 24.01 0 0 0 0 21.56l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-            Sign in with Google
+            使用 Google 登录
           </button>
-          <div class="auth-divider">or</div>
+          <div class="auth-divider">或</div>
         </div>
-        <label>Email
+        <label>邮箱
           <input id="auth-email" type="email" autocomplete="email" placeholder="you@example.com" />
         </label>
-        <label>Password
-          <input id="auth-password" type="password" autocomplete="current-password" placeholder="Your password" />
+        <label>密码
+          <input id="auth-password" type="password" autocomplete="current-password" placeholder="你的密码" />
         </label>
-        <button class="auth-btn" id="auth-login-btn" type="button">Sign in</button>
+        <button class="auth-btn" id="auth-login-btn" type="button">登录</button>
         <div class="auth-footer">
-          <button class="auth-link" id="auth-show-signup" type="button">Create an account</button>
-          &middot;
-          <button class="auth-link" id="auth-show-forgot" type="button">Forgot password?</button>
+          <button class="auth-link" id="auth-show-signup" type="button">创建账户</button>
+          ·
+          <button class="auth-link" id="auth-show-forgot" type="button">忘记密码？</button>
         </div>
       </form>
 
@@ -3237,46 +3237,46 @@
         <div id="auth-oauth-signup" class="auth-oauth-section" hidden>
           <button class="auth-google-btn" id="auth-google-signup" type="button">
             <svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.01 24.01 0 0 0 0 21.56l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-            Sign up with Google
+            使用 Google 注册
           </button>
-          <div class="auth-divider">or</div>
+          <div class="auth-divider">或</div>
         </div>
-        <label>Username
+        <label>用户名
           <input id="auth-signup-username" type="text" autocomplete="username" placeholder="lowercase_name" />
         </label>
-        <label>Display name
-          <input id="auth-signup-name" type="text" autocomplete="name" placeholder="Your display name" />
+        <label>显示名称
+          <input id="auth-signup-name" type="text" autocomplete="name" placeholder="你的显示名称" />
         </label>
-        <label>Email
+        <label>邮箱
           <input id="auth-signup-email" type="email" autocomplete="email" placeholder="you@example.com" />
         </label>
-        <label>Password
-          <input id="auth-signup-password" type="password" autocomplete="new-password" placeholder="Choose a password" />
+        <label>密码
+          <input id="auth-signup-password" type="password" autocomplete="new-password" placeholder="设置一个密码" />
         </label>
-        <button class="auth-btn" id="auth-signup-btn" type="button">Create account</button>
+        <button class="auth-btn" id="auth-signup-btn" type="button">创建账户</button>
         <div class="auth-footer">
-          Already have an account? <button class="auth-link" id="auth-show-login" type="button">Sign in</button>
+          已有账户？<button class="auth-link" id="auth-show-login" type="button">登录</button>
         </div>
       </form>
 
       <!-- Forgot password form -->
       <form id="auth-forgot" class="auth-form" hidden onsubmit="return false">
-        <label>Email
+        <label>邮箱
           <input id="auth-forgot-email" type="email" autocomplete="email" placeholder="you@example.com" />
         </label>
-        <button class="auth-btn" id="auth-forgot-btn" type="button">Send reset link</button>
+        <button class="auth-btn" id="auth-forgot-btn" type="button">发送重置链接</button>
         <div class="auth-footer">
-          <button class="auth-link" id="auth-back-login" type="button">Back to sign in</button>
+          <button class="auth-link" id="auth-back-login" type="button">返回登录</button>
         </div>
       </form>
 
       <!-- Password reset form (shown after recovery callback) -->
       <form id="auth-reset" class="auth-form" hidden onsubmit="return false">
         <input type="text" autocomplete="username" aria-hidden="true" tabindex="-1" style="display:none" />
-        <label>New password
-          <input id="auth-reset-password" type="password" autocomplete="new-password" placeholder="Choose a new password" />
+        <label>新密码
+          <input id="auth-reset-password" type="password" autocomplete="new-password" placeholder="设置一个新密码" />
         </label>
-        <button class="auth-btn" id="auth-reset-btn" type="button">Set new password</button>
+        <button class="auth-btn" id="auth-reset-btn" type="button">设置新密码</button>
       </form>
     </div>
   </div>
@@ -3284,13 +3284,13 @@
   <div id="confirm-reset-modal" class="modal" hidden>
     <form class="modal-card confirm-card" role="dialog" aria-modal="true" aria-labelledby="confirm-reset-title" onsubmit="return false">
       <div class="modal-head">
-        <strong id="confirm-reset-title">Reset to the starter world?</strong>
-        <button class="modal-close" id="confirm-reset-close" title="Close" aria-label="Close">×</button>
+        <strong id="confirm-reset-title">重置为初始世界？</strong>
+        <button class="modal-close" id="confirm-reset-close" title="关闭" aria-label="关闭">×</button>
       </div>
-      <p class="confirm-copy" id="confirm-reset-copy">This replaces your current build with the preset village. You'll lose anything you've placed on the home grid.</p>
+      <p class="confirm-copy" id="confirm-reset-copy">这将用预设村庄替换你当前的建筑。你放在主网格上的所有内容都将丢失。</p>
       <div class="modal-foot confirm-actions">
-        <button class="btn confirm-cancel" id="confirm-reset-cancel" type="button">Cancel</button>
-        <button class="btn confirm-destructive" id="confirm-reset-ok" type="button">Reset world</button>
+        <button class="btn confirm-cancel" id="confirm-reset-cancel" type="button">取消</button>
+        <button class="btn confirm-destructive" id="confirm-reset-ok" type="button">重置世界</button>
       </div>
     </form>
   </div>
@@ -3298,21 +3298,21 @@
   <div id="welcome-modal" class="modal" hidden>
     <form class="modal-card welcome-card" role="dialog" aria-modal="true" aria-labelledby="welcome-title" onsubmit="return false">
       <div class="modal-head">
-        <strong id="welcome-title" class="welcome-title">Tiny World <em>Builder</em></strong>
-        <button class="modal-close" id="welcome-close" title="Close" aria-label="Close welcome dialog">×</button>
+        <strong id="welcome-title" class="welcome-title">Mini World <em>Builder</em></strong>
+        <button class="modal-close" id="welcome-close" title="关闭" aria-label="关闭欢迎对话框">×</button>
       </div>
-      <p class="welcome-copy">Build a little voxel world by painting terrain, dropping houses, drawing fences, planting crops, and shaping paths.</p>
+      <p class="welcome-copy">通过绘制地形、放置房屋、围篱笆、种植作物和铺设道路来构建一个迷你体素世界。</p>
       <div class="welcome-tips" aria-label="Quick tips">
-        <div class="welcome-tip"><strong>Tap or click to build</strong>Select a tool, then tap any tile to place it.</div>
-        <div class="welcome-tip"><strong>Move the camera</strong>One finger or left-drag to orbit · two fingers / right-drag / Space to pan · pinch or scroll to zoom.</div>
-        <div class="welcome-tip"><strong>Keep going</strong>Use Reset, Clear, Export, Import, and Render from the top bar.</div>
+        <div class="welcome-tip"><strong>点击或轻触即可构建</strong>选择工具后，点击任意格子即可放置。</div>
+        <div class="welcome-tip"><strong>移动视角</strong>单指或左键拖动旋转 · 双指或右键拖动平移 · 双指或滚轮缩放。</div>
+        <div class="welcome-tip"><strong>继续探索</strong>使用顶部栏的重置、清空、导出、导入和渲染功能。</div>
       </div>
       <div class="welcome-actions">
         <label class="welcome-dontshow">
           <input type="checkbox" id="welcome-dontshow" />
-          <span>Don't show this again</span>
+          <span>不再显示</span>
         </label>
-        <button class="btn" id="welcome-start" type="button">Start building</button>
+        <button class="btn" id="welcome-start" type="button">开始构建</button>
       </div>
     </form>
   </div>
@@ -3320,19 +3320,19 @@
   <div id="gen-modal" class="modal" data-ai-interface hidden>
     <form class="modal-card gen-card" role="dialog" aria-modal="true" aria-labelledby="gen-title" onsubmit="return false">
       <div class="modal-head">
-        <strong id="gen-title">Generate Tiny World</strong>
-        <button class="modal-close" id="gen-close" title="Close">×</button>
+        <strong id="gen-title">生成迷你世界</strong>
+        <button class="modal-close" id="gen-close" title="关闭">×</button>
       </div>
 
-      <label>Prompt
-        <textarea id="gen-prompt" rows="3" placeholder="a small fishing village by a river, a crop field next to two cottages, rocky outcrops on edges"></textarea>
+<label>提示词
+        <textarea id="gen-prompt" rows="4" placeholder="描述你想要的世界，例如：一片有河流和松树的山地村落……"></textarea>
       </label>
 
       <div class="gen-section" data-section="size">
         <div class="gen-section-head">
-          <span class="gen-section-title">Board size</span>
+          <span class="gen-section-title">世界大小</span>
         </div>
-        <label>Home board
+        <label>主网格
           <select id="gen-grid-size">
             <option value="8">8 × 8</option>
             <option value="12">12 × 12</option>
@@ -3346,17 +3346,17 @@
 
       <div class="gen-section" data-section="seed">
         <div class="gen-section-head">
-          <span class="gen-section-title">Seed</span>
+          <span class="gen-section-title">种子</span>
         </div>
         <div class="gen-row gen-row-seed">
-          <input id="gen-seed" type="text" placeholder="leave blank for random" autocomplete="off" />
-          <button class="gen-mini" id="gen-seed-random" type="button" data-tooltip="New random seed" aria-label="Random seed">
+          <input id="gen-seed" type="text" placeholder="留空则随机生成" autocomplete="off" />
+          <button class="gen-mini" id="gen-seed-random" type="button" data-tooltip="随机种子" aria-label="随机种子">
             <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/></svg>
           </button>
-          <button class="gen-mini" id="gen-seed-copy" type="button" data-tooltip="Copy seed" aria-label="Copy seed">
+          <button class="gen-mini" id="gen-seed-copy" type="button" data-tooltip="复制种子" aria-label="复制种子">
             <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
           </button>
-          <button class="gen-mini" id="gen-seed-paste" type="button" data-tooltip="Paste seed" aria-label="Paste seed">
+          <button class="gen-mini" id="gen-seed-paste" type="button" data-tooltip="粘贴种子" aria-label="粘贴种子">
             <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
           </button>
         </div>
@@ -3364,32 +3364,32 @@
 
       <div class="gen-section" data-section="biomes">
         <div class="gen-section-head">
-          <span class="gen-section-title">Composition</span>
+          <span class="gen-section-title">组成</span>
           <span class="gen-section-sum" id="gen-biome-sum">100%</span>
         </div>
         <div class="gen-sliders" id="gen-biome-sliders">
           <label class="gen-slider-row" data-biome="grass">
-            <span class="gen-slider-label"><span class="gen-swatch" style="background:#9bc16a"></span>Grass</span>
+            <span class="gen-slider-label"><span class="gen-swatch" style="background:#9bc16a"></span>草地</span>
             <input type="range" min="0" max="100" step="1" value="55" data-biome="grass" />
             <span class="gen-slider-val">55%</span>
           </label>
           <label class="gen-slider-row" data-biome="forest">
-            <span class="gen-slider-label"><span class="gen-swatch" style="background:#4f8a3a"></span>Forest</span>
+            <span class="gen-slider-label"><span class="gen-swatch" style="background:#4f8a3a"></span>森林</span>
             <input type="range" min="0" max="100" step="1" value="20" data-biome="forest" />
             <span class="gen-slider-val">20%</span>
           </label>
           <label class="gen-slider-row" data-biome="water">
-            <span class="gen-slider-label"><span class="gen-swatch" style="background:#5da3c8"></span>Water</span>
+            <span class="gen-slider-label"><span class="gen-swatch" style="background:#5da3c8"></span>水域</span>
             <input type="range" min="0" max="100" step="1" value="10" data-biome="water" />
             <span class="gen-slider-val">10%</span>
           </label>
           <label class="gen-slider-row" data-biome="dirt">
-            <span class="gen-slider-label"><span class="gen-swatch" style="background:#b8945a"></span>Farmland</span>
+            <span class="gen-slider-label"><span class="gen-swatch" style="background:#b8945a"></span>农田</span>
             <input type="range" min="0" max="100" step="1" value="10" data-biome="dirt" />
             <span class="gen-slider-val">10%</span>
           </label>
           <label class="gen-slider-row" data-biome="settlement">
-            <span class="gen-slider-label"><span class="gen-swatch" style="background:#c98a5b"></span>Settlement</span>
+            <span class="gen-slider-label"><span class="gen-swatch" style="background:#c98a5b"></span>村落</span>
             <input type="range" min="0" max="100" step="1" value="5" data-biome="settlement" />
             <span class="gen-slider-val">5%</span>
           </label>
@@ -3398,22 +3398,22 @@
 
       <div class="gen-section" data-section="elevation">
         <div class="gen-section-head">
-          <span class="gen-section-title">Elevation</span>
+          <span class="gen-section-title">海拔</span>
           <span class="gen-section-sum" id="gen-elev-sum">100%</span>
         </div>
         <div class="gen-sliders" id="gen-elev-sliders">
           <label class="gen-slider-row" data-elev="plains">
-            <span class="gen-slider-label">Plains</span>
+            <span class="gen-slider-label">平原</span>
             <input type="range" min="0" max="100" step="1" value="55" data-elev="plains" />
             <span class="gen-slider-val">55%</span>
           </label>
           <label class="gen-slider-row" data-elev="hills">
-            <span class="gen-slider-label">Hills</span>
+            <span class="gen-slider-label">丘陵</span>
             <input type="range" min="0" max="100" step="1" value="30" data-elev="hills" />
             <span class="gen-slider-val">30%</span>
           </label>
           <label class="gen-slider-row" data-elev="mountains">
-            <span class="gen-slider-label">Mountains</span>
+            <span class="gen-slider-label">山地</span>
             <input type="range" min="0" max="100" step="1" value="15" data-elev="mountains" />
             <span class="gen-slider-val">15%</span>
           </label>
@@ -3423,18 +3423,18 @@
       <div class="gen-section" data-section="advanced">
         <label class="gen-check">
           <input type="checkbox" id="gen-procedural" />
-          <span>Procedural (offline) <em class="gen-hint">— skip the LLM, generate directly from seed</em></span>
+          <span>程序化（离线）<em class="gen-hint">— 跳过LLM，直接根据种子生成</em></span>
         </label>
         <label class="gen-check">
           <input type="checkbox" id="gen-disable-autofill" />
-          <span>Disable outside auto-fill <em class="gen-hint">blank grass beyond the generated board</em></span>
+          <span>禁用外部自动填充<em class="gen-hint">超出生成棋盘的范围留空</em></span>
         </label>
       </div>
 
-      <div class="help-line">Replaces the current world. Model and API key live in Settings → AI.</div>
+      <div class="help-line">将替换当前世界。模型和API密钥位于「设置」→「AI」页。</div>
       <div class="modal-foot">
         <span id="gen-status"></span>
-        <button class="btn" id="gen-go" type="button">Generate</button>
+        <button class="btn" id="gen-go" type="button">生成</button>
       </div>
     </form>
   </div>
@@ -3442,51 +3442,51 @@
   <div id="render-modal" class="modal" hidden>
     <form class="modal-card settings-card" role="dialog" aria-modal="true" aria-labelledby="render-title" onsubmit="return false">
       <div class="modal-head">
-        <strong id="render-title">Settings</strong>
-        <button class="modal-close" id="render-close" title="Close">×</button>
+        <strong id="render-title">设置</strong>
+        <button class="modal-close" id="render-close" title="关闭">×</button>
       </div>
       <div class="settings-layout">
         <nav class="settings-tabs" aria-label="Settings sections">
-          <button type="button" class="settings-tab active" data-settings-tab="screen">Screen</button>
-          <button type="button" class="settings-tab" data-settings-tab="world">World</button>
-          <button type="button" class="settings-tab" data-settings-tab="sky">Sky</button>
+          <button type="button" class="settings-tab active" data-settings-tab="screen">屏幕</button>
+          <button type="button" class="settings-tab" data-settings-tab="world">世界</button>
+          <button type="button" class="settings-tab" data-settings-tab="sky">天空</button>
           <button type="button" class="settings-tab" data-settings-tab="ai" data-ai-interface>AI</button>
         </nav>
         <div class="settings-panels">
           <section class="settings-panel active" data-settings-panel="screen">
-            <div class="settings-section-title">Screen</div>
-            <label>Shadow quality
+            <div class="settings-section-title">屏幕</div>
+            <label>阴影质量
               <select id="render-shadow">
-                <option value="low">Low</option>
-                <option value="balanced">Balanced</option>
-                <option value="high">High</option>
+                <option value="low">低</option>
+                <option value="balanced">平衡</option>
+                <option value="high">高</option>
               </select>
             </label>
             <div class="range-row">
-              <span>Resolution</span>
+              <span>分辨率</span>
               <input id="render-resolution" type="range" min="55" max="150" step="5" />
               <output id="render-resolution-value"></output>
             </div>
             <div class="range-row">
-              <span>Lighting</span>
+              <span>光照</span>
               <input id="render-lighting" type="range" min="50" max="145" step="1" />
               <output id="render-lighting-value"></output>
             </div>
           </section>
 
           <section class="settings-panel" data-settings-panel="world">
-            <div class="settings-section-title">World</div>
+            <div class="settings-section-title">世界</div>
             <div class="range-row">
-              <span>Preview distance</span>
+              <span>预览距离</span>
               <input id="render-distance" type="range" min="1" max="4" step="1" />
               <output id="render-distance-value"></output>
             </div>
             <div class="range-row">
-              <span>Preview window</span>
+              <span>预览窗口</span>
               <input id="render-visible-size" type="range" min="8" max="72" step="1" />
               <output id="render-visible-size-value"></output>
             </div>
-            <label>Home board size
+            <label>主网格大小
               <select id="render-home-grid">
                 <option value="8">8 × 8</option>
                 <option value="12">12 × 12</option>
@@ -3497,95 +3497,96 @@
               </select>
             </label>
             <div class="range-row">
-              <span>Preview opacity</span>
+              <span>预览透明度</span>
               <input id="render-ghost-opacity" type="range" min="5" max="100" step="1" />
               <output id="render-ghost-opacity-value"></output>
             </div>
             <div class="range-row">
-              <span>Preview floors</span>
+              <span>预览楼层</span>
               <input id="render-floor-opacity" type="range" min="10" max="100" step="1" />
               <output id="render-floor-opacity-value"></output>
             </div>
             <div class="range-row">
-              <span>Preview objects</span>
+              <span>预览物体</span>
               <input id="render-object-opacity" type="range" min="0" max="100" step="1" />
               <output id="render-object-opacity-value"></output>
             </div>
             <div class="range-row">
-              <span>Brightness</span>
+              <span>亮度</span>
               <input id="render-brightness" type="range" min="75" max="130" step="1" />
               <output id="render-brightness-value"></output>
             </div>
             <div class="range-row">
-              <span>Saturation</span>
+              <span>饱和度</span>
               <input id="render-saturation" type="range" min="80" max="130" step="1" />
               <output id="render-saturation-value"></output>
             </div>
             <div class="range-row">
-              <span>Contrast</span>
+              <span>对比度</span>
               <input id="render-contrast" type="range" min="85" max="125" step="1" />
               <output id="render-contrast-value"></output>
             </div>
           </section>
 
           <section class="settings-panel" data-settings-panel="sky">
-            <div class="settings-section-title">Sky</div>
+            <div class="settings-section-title">天空</div>
             <div class="range-row">
-              <span>Clouds</span>
+              <span>云量</span>
               <input id="render-clouds" type="range" min="0" max="100" step="1" />
               <output id="render-clouds-value"></output>
             </div>
             <div class="range-row">
-              <span>Cloud speed</span>
+              <span>云速</span>
               <input id="render-cloud-speed" type="range" min="0" max="100" step="1" />
               <output id="render-cloud-speed-value"></output>
             </div>
             <div class="range-row">
-              <span>Cloud height</span>
+              <span>云高</span>
               <input id="render-cloud-height" type="range" min="2" max="14" step="0.5" />
               <output id="render-cloud-height-value"></output>
             </div>
             <div class="range-row">
-              <span>Cloud shadow</span>
+              <span>云影</span>
               <input id="render-cloud-shadow" type="range" min="0" max="100" step="1" />
               <output id="render-cloud-shadow-value"></output>
             </div>
             <div class="range-row">
-              <span>Tilt blur</span>
+              <span>移轴模糊</span>
               <input id="render-tilt-blur" type="range" min="0" max="8" step="0.5" />
               <output id="render-tilt-blur-value"></output>
             </div>
             <div class="range-row">
-              <span>Tilt focus</span>
+              <span>移轴焦点</span>
               <input id="render-tilt-focus" type="range" min="15" max="80" step="1" />
               <output id="render-tilt-focus-value"></output>
             </div>
           </section>
 
           <section class="settings-panel" data-settings-panel="ai" data-ai-interface>
-            <div class="settings-section-title">AI generation</div>
-            <label>Provider
+            <div class="settings-section-title">AI 生成</div>
+            <label>提供商
               <select id="gen-provider">
                 <option value="openai">OpenAI</option>
                 <option value="anthropic">Anthropic</option>
                 <option value="xai">xAI / Grok</option>
+                <option value="minimax">MiniMax</option>
               </select>
             </label>
-            <label>Model
+            <label>模型
               <input id="gen-model" list="gen-model-list" autocomplete="off" spellcheck="false" placeholder="gpt-5.5" />
               <datalist id="gen-model-list"></datalist>
-              <div class="profile-hint" style="margin-top:4px;">Type any model name your key has access to. Suggestions are just shortcuts.</div>
+              <div class="profile-hint" style="margin-top:4px;">输入你的密钥有权限访问的任何模型名称。提示仅是快捷方式。</div>
             </label>
-            <label>API key <span style="font-weight:400;font-size:11px;">(stored in this browser only)</span>
+            <label>API密钥 <span style="font-weight:400;font-size:11px;">（仅存储在此浏览器中）</span>
               <input id="gen-key" type="password" autocomplete="off" placeholder="sk-... / xai-... / etc" />
             </label>
-            <div class="help-line">Used by Generate, Auto, and the floating agent. The prompt tells models to assemble requests from Tiny World primitives: terrain, paths, fences, rocks, crops, bridges, trees, tufts, and building clusters.</div>
+            <div class="help-line">Used by Generate, Auto, and the floating agent. The prompt tells models to assemble requests from Mini World primitives: terrain, paths, fences, rocks, crops, bridges, trees, tufts, and building clusters.</div>
           </section>
         </div>
       </div>
       <div class="modal-foot">
         <span id="render-status"></span>
-        <button class="btn" id="render-reset" type="button">Reset</button>
+        <button class="btn" id="render-reset" type="button">重置</button>
       </div>
     </form>
   </div>
@@ -3609,7 +3610,7 @@
 
   <form id="agent-input" class="agent-input" data-ai-interface autocomplete="off">
     <button type="button" class="agent-grip" id="agent-grip" title="Drag agent input" aria-label="Drag agent input">⋮⋮</button>
-    <input id="agent-prompt" type="text" placeholder="Ask the agent to change this world…" aria-label="Ask the agent" />
+    <input id="agent-prompt" type="text" placeholder="让 AI 修改这个世界……" aria-label="询问 AI" />
     <button type="submit" class="agent-send" id="agent-send" aria-label="Send to agent">↑</button>
     <div id="agent-suggestions" class="agent-suggestions" role="listbox" aria-label="Suggested prompts" hidden></div>
   </form>
@@ -3624,12 +3625,12 @@
       <span class="palette-search-icon" aria-hidden="true">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </span>
-      <input class="palette-search" id="palette-search" placeholder="Search tools, commands, settings…" autocomplete="off" />
+      <input class="palette-search" id="palette-search" placeholder="搜索工具、命令、设置…" autocomplete="off" />
       <div class="palette-results" id="palette-results" role="listbox"></div>
       <div class="palette-footer">
-        <span><kbd>↑↓</kbd> navigate</span>
-        <span><kbd>↵</kbd> select</span>
-        <span><kbd>esc</kbd> close</span>
+<span><kbd>↑↓</kbd> 导航</span>
+          <span><kbd>↵</kbd> 选择</span>
+          <span><kbd>esc</kbd> 关闭</span>
       </div>
     </div>
   </div>
@@ -3638,7 +3639,7 @@
   <script src="vendor/three/GLTFLoader.r128.js"></script>
   <script>
   /* =====================================================================
-     Tiny World Builder — single-file Three.js scene + tile editor
+     Mini World Builder — single-file Three.js scene + tile editor
      ===================================================================== */
 
   // -------- constants --------
@@ -9089,61 +9090,61 @@
 
   // -------- tools --------
   const TOOLS = [
-    { id: 'auto',   label: 'Auto',   auto: true, color: '#3a72c8', shortcut: '0', group: 'tools', hidden: true },
-    { id: 'select', label: 'Select', select: true, color: '#c8b06f', shortcut: 'v', group: 'tools' },
-    { id: 'grass',  label: 'Grass',  terrain: 'grass', color: '#9ec74b', shortcut: '1', group: 'terrain' },
-    { id: 'path',   label: 'Path',   terrain: 'path',  color: '#e8d5a8', shortcut: '2', group: 'terrain' },
-    { id: 'dirt',   label: 'Dirt',   terrain: 'dirt',  color: '#5a3b27', shortcut: '3', group: 'terrain' },
-    { id: 'water',  label: 'Water',  terrain: 'water', color: '#4a90c2', shortcut: '4', group: 'terrain' },
-    { id: 'stone',  label: 'Stone',  terrain: 'stone', color: '#8f8a82', group: 'terrain' },
-    { id: 'lava',   label: 'Lava',   terrain: 'lava',  color: '#e7592b', group: 'terrain' },
-    { id: 'sand',   label: 'Sand',   terrain: 'sand',  color: '#e6cc7c', group: 'terrain' },
-    { id: 'snow',   label: 'Snow',   terrain: 'snow',  color: '#f2f5fa', group: 'terrain' },
-    { id: 'house',  label: 'House',  kind: 'house', color: '#3a72c8', shortcut: '5', group: 'build',
+    { id: 'auto',   label: '自动',   auto: true, color: '#3a72c8', shortcut: '0', group: 'tools', hidden: true },
+    { id: 'select', label: '选择', select: true, color: '#c8b06f', shortcut: 'v', group: 'tools' },
+    { id: 'grass',  label: '草地',  terrain: 'grass', color: '#9ec74b', shortcut: '1', group: 'terrain' },
+    { id: 'path',   label: '道路',   terrain: 'path',  color: '#e8d5a8', shortcut: '2', group: 'terrain' },
+    { id: 'dirt',   label: '泥土',   terrain: 'dirt',  color: '#5a3b27', shortcut: '3', group: 'terrain' },
+    { id: 'water',  label: '水',  terrain: 'water', color: '#4a90c2', shortcut: '4', group: 'terrain' },
+    { id: 'stone',  label: '石头',  terrain: 'stone', color: '#8f8a82', group: 'terrain' },
+    { id: 'lava',   label: '熔岩',   terrain: 'lava',  color: '#e7592b', group: 'terrain' },
+    { id: 'sand',   label: '沙',   terrain: 'sand',  color: '#e6cc7c', group: 'terrain' },
+    { id: 'snow',   label: '雪',   terrain: 'snow',  color: '#f2f5fa', group: 'terrain' },
+    { id: 'house',  label: '房屋',  kind: 'house', color: '#3a72c8', shortcut: '5', group: 'build',
       variants: [
-        { id: 'auto',       label: 'Auto',      buildingType: null,         hint: 'cluster + auto-promo' },
-        { id: 'cottage',    label: 'Cottage',   buildingType: 'cottage',    hint: 'force cottage style' },
-        { id: 'manor',      label: 'Manor',     buildingType: 'manor',      hint: 'brick + portico' },
-        { id: 'tower',      label: 'Tower',     buildingType: 'tower',      hint: 'stone tower w/ conical roof' },
-        { id: 'turret',     label: 'Castle',    buildingType: 'turret',     hint: 'castle turret / keep' },
-        { id: 'highrise',   label: 'High-rise', buildingType: 'skyscraper', hint: 'glass tower' },
+        { id: 'auto',       label: '自动',      buildingType: null,         hint: 'cluster + auto-promo' },
+        { id: 'cottage',    label: '小屋',   buildingType: 'cottage',    hint: 'force cottage style' },
+        { id: 'manor',      label: '庄园',     buildingType: 'manor',      hint: 'brick + portico' },
+        { id: 'tower',      label: '塔楼',     buildingType: 'tower',      hint: 'stone tower w/ conical roof' },
+        { id: 'turret',     label: '城堡',    buildingType: 'turret',     hint: 'castle turret / keep' },
+        { id: 'highrise',   label: '高楼', buildingType: 'skyscraper', hint: 'glass tower' },
       ],
     },
-    { id: 'tree',   label: 'Tree',   kind: 'tree',  color: '#6fb442', shortcut: '6', group: 'nature' },
-    { id: 'fence',  label: 'Fence',  kind: 'fence', color: '#8a5a3b', shortcut: '7', group: 'build',
+    { id: 'tree',   label: '树',   kind: 'tree',  color: '#6fb442', shortcut: '6', group: 'nature' },
+    { id: 'fence',  label: '篱笆',  kind: 'fence', color: '#8a5a3b', shortcut: '7', group: 'build',
       variants: [
-        { id: 'edge',    label: 'Edge',      fenceSide: 'auto',     hint: 'nearest clicked edge' },
-        { id: 'north',   label: 'North',     fenceSide: 'n',        hint: 'north tile edge' },
-        { id: 'east',    label: 'East',      fenceSide: 'e',        hint: 'east tile edge' },
-        { id: 'south',   label: 'South',     fenceSide: 's',        hint: 'south tile edge' },
-        { id: 'west',    label: 'West',      fenceSide: 'w',        hint: 'west tile edge' },
-        { id: 'center-x', label: 'Center X', fenceSide: 'center-x', hint: 'center rail east-west' },
-        { id: 'center-z', label: 'Center Z', fenceSide: 'center-z', hint: 'center rail north-south' },
+        { id: 'edge',    label: '边缘',      fenceSide: 'auto',     hint: 'nearest clicked edge' },
+        { id: 'north',   label: '北',     fenceSide: 'n',        hint: 'north tile edge' },
+        { id: 'east',    label: '东',      fenceSide: 'e',        hint: 'east tile edge' },
+        { id: 'south',   label: '南',     fenceSide: 's',        hint: 'south tile edge' },
+        { id: 'west',    label: '西',      fenceSide: 'w',        hint: 'west tile edge' },
+        { id: 'center-x', label: '中心横', fenceSide: 'center-x', hint: 'center rail east-west' },
+        { id: 'center-z', label: '中心纵', fenceSide: 'center-z', hint: 'center rail north-south' },
       ],
     },
-    { id: 'rock',   label: 'Rock',   kind: 'rock',  color: '#9b9a8f', shortcut: '8', group: 'nature' },
-    { id: 'bridge', label: 'Bridge', kind: 'bridge', terrainOverride: 'water', color: '#8b5a32', shortcut: '9', group: 'build' },
-    { id: 'crop',      label: 'Crop',      kind: 'crop',      terrainOverride: 'dirt', color: '#86c544', shortcut: 'g', group: 'crops' },
-    { id: 'corn',      label: 'Corn',      kind: 'corn',      terrainOverride: 'dirt', color: '#f2c849', shortcut: 'n', group: 'crops' },
-    { id: 'wheat',     label: 'Wheat',     kind: 'wheat',     terrainOverride: 'dirt', color: '#e6c354', shortcut: 'w', group: 'crops' },
-    { id: 'pumpkin',   label: 'Pumpkin',   kind: 'pumpkin',   terrainOverride: 'dirt', color: '#e07c2a', shortcut: 'u', group: 'crops' },
-    { id: 'carrot',    label: 'Carrot',    kind: 'carrot',    terrainOverride: 'dirt', color: '#e06a2a', shortcut: 'a', group: 'crops' },
-    { id: 'sunflower', label: 'Sunflower', kind: 'sunflower', terrainOverride: 'dirt', color: '#f7b730', shortcut: 's', group: 'crops' },
-    { id: 'tuft',   label: 'Tuft',   kind: 'tuft',  color: '#86b53e', shortcut: 't', group: 'nature' },
-    { id: 'flower', label: 'Flower', kind: 'flower', color: '#d24a4f', group: 'nature' },
-    { id: 'bush',   label: 'Bush',   kind: 'bush',  color: '#6fa030', group: 'nature' },
-    { id: 'cow',    label: 'Cow',    kind: 'cow',   color: '#f2eee0', group: 'animals' },
-    { id: 'sheep',  label: 'Sheep',  kind: 'sheep', color: '#e8e2d2', group: 'animals' },
-    { id: 'erase',  label: 'Erase',  erase: true, color: 'transparent', eraser: true, shortcut: 'e', group: 'tools' },
+    { id: 'rock',   label: '岩石',   kind: 'rock',  color: '#9b9a8f', shortcut: '8', group: 'nature' },
+    { id: 'bridge', label: '桥梁', kind: 'bridge', terrainOverride: 'water', color: '#8b5a32', shortcut: '9', group: 'build' },
+    { id: 'crop',      label: '作物',      kind: 'crop',      terrainOverride: 'dirt', color: '#86c544', shortcut: 'g', group: 'crops' },
+    { id: 'corn',      label: '玉米',      kind: 'corn',      terrainOverride: 'dirt', color: '#f2c849', shortcut: 'n', group: 'crops' },
+    { id: 'wheat',     label: '小麦',     kind: 'wheat',     terrainOverride: 'dirt', color: '#e6c354', shortcut: 'w', group: 'crops' },
+    { id: 'pumpkin',   label: '南瓜',   kind: 'pumpkin',   terrainOverride: 'dirt', color: '#e07c2a', shortcut: 'u', group: 'crops' },
+    { id: 'carrot',    label: '胡萝卜',    kind: 'carrot',    terrainOverride: 'dirt', color: '#e06a2a', shortcut: 'a', group: 'crops' },
+    { id: 'sunflower', label: '向日葵', kind: 'sunflower', terrainOverride: 'dirt', color: '#f7b730', shortcut: 's', group: 'crops' },
+    { id: 'tuft',   label: '草丛',   kind: 'tuft',  color: '#86b53e', shortcut: 't', group: 'nature' },
+    { id: 'flower', label: '花', kind: 'flower', color: '#d24a4f', group: 'nature' },
+    { id: 'bush',   label: '灌木',   kind: 'bush',  color: '#6fa030', group: 'nature' },
+    { id: 'cow',    label: '牛',    kind: 'cow',   color: '#f2eee0', group: 'animals' },
+    { id: 'sheep',  label: '羊',  kind: 'sheep', color: '#e8e2d2', group: 'animals' },
+    { id: 'erase',  label: '擦除',  erase: true, color: 'transparent', eraser: true, shortcut: 'e', group: 'tools' },
   ];
 
   const TOOL_GROUPS = [
-    { id: 'terrain', label: 'Terrain', toolIds: ['grass', 'path', 'dirt', 'water', 'stone', 'lava', 'sand', 'snow', 'rock'], iconTool: 'grass' },
-    { id: 'plants', label: 'Plants', toolIds: ['tree', 'tuft', 'flower', 'bush'], iconTool: 'tree' },
-    { id: 'build', label: 'Build', toolIds: ['house'], iconTool: 'house' },
-    { id: 'infra', label: 'Infra', toolIds: ['fence', 'bridge'], iconTool: 'fence' },
-    { id: 'farm', label: 'Farm', toolIds: ['crop', 'corn', 'wheat', 'pumpkin', 'carrot', 'sunflower'], iconTool: 'wheat' },
-    { id: 'life', label: 'Life', toolIds: ['cow', 'sheep'], iconTool: 'cow' },
+    { id: 'terrain', label: '地形', toolIds: ['grass', 'path', 'dirt', 'water', 'stone', 'lava', 'sand', 'snow', 'rock'], iconTool: 'grass' },
+    { id: 'plants', label: '植物', toolIds: ['tree', 'tuft', 'flower', 'bush'], iconTool: 'tree' },
+    { id: 'build', label: '建筑', toolIds: ['house'], iconTool: 'house' },
+    { id: 'infra', label: '设施', toolIds: ['fence', 'bridge'], iconTool: 'fence' },
+    { id: 'farm', label: '农场', toolIds: ['crop', 'corn', 'wheat', 'pumpkin', 'carrot', 'sunflower'], iconTool: 'wheat' },
+    { id: 'life', label: '动物', toolIds: ['cow', 'sheep'], iconTool: 'cow' },
   ];
 
   function groupForTool(tool) {
@@ -10288,7 +10289,7 @@
       if (!applyState(data)) throw new Error('schema check failed');
     } catch (err) {
       console.error('Import failed:', err);
-      alert('Could not import that file — not a valid Tiny World JSON.');
+      alert('Could not import that file — not a valid Mini World JSON.');
     }
     e.target.value = '';
   });
@@ -11454,7 +11455,7 @@
     // Ported from the better flight-sim-style cloud pass: 8–12 low-poly
     // dodecahedron puffs with wide horizontal spread and mild vertical
     // build-up. These read softer and more natural than the older slab
-    // stack while staying cheap at Tiny World's cloud counts.
+    // stack while staying cheap at Mini World's cloud counts.
     const count = 8 + Math.floor(Math.random() * 5);
     for (let i = 0; i < count; i++) {
       const r = 0.25 + Math.random() * 0.35;
@@ -12619,7 +12620,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://tinyworld.local/world.schema.json",
     "title": "TinyWorld",
-    "description": "Scene description for the Tiny World Builder. The renderer supports home grids from 8x8 to 48x48, plus sparse user-edited ghost-board cells outside the home grid. Each non-default cell has a terrain, optional object kind, separate object floors and terrainFloors counts, optional house buildingType, optional fenceSide, optional decorative extras, and optional within-tile transform.",
+    "description": "Scene description for the Mini World Builder. The renderer supports home grids from 8x8 to 48x48, plus sparse user-edited ghost-board cells outside the home grid. Each non-default cell has a terrain, optional object kind, separate object floors and terrainFloors counts, optional house buildingType, optional fenceSide, optional decorative extras, and optional within-tile transform.",
     "type": "object",
     "additionalProperties": false,
     "required": [
@@ -12984,6 +12985,18 @@
         'grok-4.20-reasoning', 'grok-4.20',
       ],
     },
+    minimax: {
+      model: 'MiniMax-M2.7',
+      endpoint: 'https://api.minimaxi.com/v1/chat/completions',
+      models: [
+        'MiniMax-M2.7',
+        'MiniMax-M2.7-highspeed',
+        'MiniMax-M2.5',
+        'MiniMax-M2.5-highspeed',
+        'MiniMax-M2.1',
+        'MiniMax-M2.1-highspeed',
+      ],
+    },
   };
   const AI_LS = {
     provider: 'tinyworld:ai:provider',
@@ -13069,7 +13082,7 @@
 
   const PRIMITIVE_ASSEMBLY_PROMPT = [
     'Primitive assembly rules:',
-    '- You cannot invent new object kinds, meshes, labels, or custom geometry in JSON. Build every requested thing by arranging the available Tiny World primitives: terrain cells, raised terrainFloors, houses/buildingType variants, trees, fences/fenceSide, rocks, bridges, crop kinds, and tufts.',
+    '- You cannot invent new object kinds, meshes, labels, or custom geometry in JSON. Build every requested thing by arranging the available Mini World primitives: terrain cells, raised terrainFloors, houses/buildingType variants, trees, fences/fenceSide, rocks, bridges, crop kinds, and tufts.',
     '- Translate real-world objects into readable low-poly tile assemblies. Example: skate park = path/dirt plaza + raised terrain ramps + rocks as boulders/ramps + fences as rails/edges + tufts/trees as landscaping.',
     '- Use terrain as the base primitive: grass=open space, path=paved/concrete, dirt=earth/fields, water=canals/ponds. Use terrainFloors for platforms, terraces, steps, banks, ramps, plinths, hills, mountains, and cliffs.',
     '- Use fences as line primitives: rails, walls, borders, pens, queue barriers, garden edging, pier rails, road gates, and castle-wall components. Set fenceSide deliberately.',
@@ -13084,7 +13097,7 @@
     const size = HOME_GRID_OPTIONS.includes(gridSize) ? gridSize : GRID;
     const maxCoord = size - 1;
     return [
-      'You are a level designer and low-poly primitive assembler for the Tiny World Builder, a ' + size + 'x' + size + ' isometric voxel scene.',
+      'You are a level designer and low-poly primitive assembler for the Mini World Builder, a ' + size + 'x' + size + ' isometric voxel scene.',
       'Output a JSON object that strictly matches the provided JSON Schema. Do not include prose, markdown fences, or explanations — only the JSON object.',
       'Required home board edge length: include "gridSize": ' + size + ' in the JSON object.',
       'Grid coordinates: x in 0..' + maxCoord + ' (left-right), z in 0..' + maxCoord + ' (front-back). Default cell is grass with no object.',
@@ -13112,7 +13125,7 @@
 
   function buildAutoSystemPrompt() {
     return [
-      'You are the Auto palette tool for Tiny World Builder, an 8x8 isometric voxel scene.',
+      'You are the Auto palette tool for Mini World Builder, an 8x8 isometric voxel scene.',
       'Read the current home-board JSON and produce a ranked batch of candidate tile actions the player may place next.',
       'Do not choose coordinates and do not replace the whole world. The player will still choose the clicked tile locally.',
       'Base the suggestions on the current sparse world state, nearby patterns, and what would be coherent next manual placements.',
@@ -13192,7 +13205,7 @@
     const maxCoord = GRID - 1;
     return [
       'Mode: ADDITION PATCH.',
-      'Treat the user request as an addition to the existing Tiny World. Do not replace, reset, clear, or redesign the world.',
+      'Treat the user request as an addition to the existing Mini World. Do not replace, reset, clear, or redesign the world.',
       'Return a JSON object matching the schema with "gridSize": ' + GRID + ' and only the cells that should be added or changed.',
       'Do not emit unchanged existing cells. The app will merge your emitted cells into the current board and preserve every cell not mentioned.',
       'Every emitted cell must be the complete final state for that coordinate: x, z, terrain, kind, floors, terrainFloors, buildingType, fenceSide, and extras if needed.',
@@ -13350,7 +13363,7 @@
         system,
         tools: [{
           name: toolName,
-          description: (toolSpec && toolSpec.description) || 'Emit a Tiny World scene as JSON.',
+          description: (toolSpec && toolSpec.description) || 'Emit a Mini World scene as JSON.',
           input_schema: (toolSpec && toolSpec.schema) || WORLD_SCHEMA,
         }],
         tool_choice: { type: 'tool', name: toolName },
@@ -13764,7 +13777,7 @@
     if (cfg.provider === 'anthropic') {
       raw = await callAnthropic(def.endpoint, cfg.key, cfg.model, system, user, {
         name: 'choose_auto_suggestions',
-        description: 'Choose a ranked batch of Tiny World tile actions for the Auto palette tool.',
+        description: 'Choose a ranked batch of Mini World tile actions for the Auto palette tool.',
         schema: AUTO_SUGGESTIONS_SCHEMA,
       });
     } else {
@@ -17202,28 +17215,28 @@
         }
       } catch (_) {}
       // Top-bar buttons
-      items.push({ group: 'Camera', label: 'Toggle perspective', hint: 'orbit vs orthographic', kbd: 'P', run: topBtnAction('persp') });
-      items.push({ group: 'Camera', label: 'Pick camera view…', hint: 'top-down / soft / first-person', run: topBtnAction('view-modes') });
-      items.push({ group: 'Camera', label: 'Center on home grid', hint: 'frame the home board', kbd: 'H', run: topBtnAction('home') });
+      items.push({ group: 'Camera', label: '切换视角', hint: '环绕 vs 正交', kbd: 'P', run: topBtnAction('persp') });
+      items.push({ group: 'Camera', label: '选择相机视角…', hint: '俯视 / 柔和 / 第一人称', run: topBtnAction('view-modes') });
+      items.push({ group: 'Camera', label: '居中到主网格', hint: '将主棋盘置于画面中央', kbd: 'H', run: topBtnAction('home') });
       // Terrain — raise/lower the hovered cell
-      items.push({ group: 'Terrain', label: 'Raise terrain at cursor', hint: 'terrainFloors +1 (max 8)', kbd: 'R', run: () => {
+      items.push({ group: 'Terrain', label: '提升光标处地形', hint: 'terrainFloors +1（最高8层）', kbd: 'R', run: () => {
         if (typeof window.__adjustHoverTerrainHeight === 'function') window.__adjustHoverTerrainHeight(+1);
       } });
-      items.push({ group: 'Terrain', label: 'Lower terrain at cursor', hint: 'terrainFloors -1 (min 1)', kbd: 'F', run: () => {
+      items.push({ group: 'Terrain', label: '降低光标处地形', hint: 'terrainFloors -1（最低1层）', kbd: 'F', run: () => {
         if (typeof window.__adjustHoverTerrainHeight === 'function') window.__adjustHoverTerrainHeight(-1);
       } });
       // Scene
-      items.push({ group: 'Scene', label: 'Time & weather…', hint: 'tint, season, weather', run: topBtnAction('time-weather') });
-      items.push({ group: 'Scene', label: 'Toggle developer overlay', hint: 'FPS / draws / tris', kbd: '`', run: topBtnAction('dev-mode') });
-      items.push({ group: 'World', label: 'Reset world', hint: 'back to the starter scene', run: topBtnAction('reset') });
-      items.push({ group: 'World', label: 'Clear to grass', hint: 'wipe to empty grass', run: topBtnAction('clear') });
-      items.push({ group: 'World', label: 'Export world as JSON', run: topBtnAction('export') });
-      items.push({ group: 'World', label: 'Import world from JSON', run: topBtnAction('import') });
-      items.push({ group: 'World', label: 'Generate from prompt…', hint: 'AI generation panel', kbd: '⌘G', run: () => {
+      items.push({ group: 'Scene', label: '时间与天气…', hint: '色调、季节、天气', run: topBtnAction('time-weather') });
+      items.push({ group: 'Scene', label: '切换开发者叠加层', hint: 'FPS / 绘制 / 三角面', kbd: '`', run: topBtnAction('dev-mode') });
+      items.push({ group: 'World', label: '重置世界', hint: '回到初始场景', run: topBtnAction('reset') });
+      items.push({ group: 'World', label: '清空为草地', hint: '擦除所有内容', run: topBtnAction('clear') });
+      items.push({ group: 'World', label: '导出世界为JSON', run: topBtnAction('export') });
+      items.push({ group: 'World', label: '从JSON导入世界', run: topBtnAction('import') });
+      items.push({ group: 'World', label: '从提示词生成…', hint: 'AI生成面板', kbd: '⌘G', run: () => {
         if (typeof openGenerateModal === 'function') openGenerateModal();
         else topBtnAction('generate')();
       } });
-      items.push({ group: 'World', label: 'Generate procedurally (offline)', hint: 'seed + biomes, no LLM', run: () => {
+      items.push({ group: 'World', label: '程序化生成（离线）', hint: '种子+生物群落，无需LLM', run: () => {
         try {
           const state = (typeof window.__genState === 'function') ? window.__genState() : null;
           const seed = (state && state.seed) || randomSeed();
@@ -17235,14 +17248,14 @@
         } catch (err) { console.warn('[palette] procedural failed:', err); }
       } });
       // Settings tabs (router into the Settings modal)
-      items.push({ group: 'Settings', label: 'Settings — Screen', run: settingsTab('screen') });
-      items.push({ group: 'Settings', label: 'Settings — World',  run: settingsTab('world') });
-      items.push({ group: 'Settings', label: 'Settings — Sky',    run: settingsTab('sky') });
-      items.push({ group: 'Settings', label: 'Settings — AI',     run: settingsTab('ai') });
+      items.push({ group: 'Settings', label: '设置 — 屏幕', run: settingsTab('screen') });
+      items.push({ group: 'Settings', label: '设置 — 世界',  run: settingsTab('world') });
+      items.push({ group: 'Settings', label: '设置 — 天空',    run: settingsTab('sky') });
+      items.push({ group: 'Settings', label: '设置 — AI',     run: settingsTab('ai') });
       if (window.TinyWorldAuth) {
-        items.push({ group: 'Account', label: 'Open account / My Builds', run: topBtnAction('account-btn') });
-        items.push({ group: 'Account', label: 'Sign in', run: topBtnAction('auth-login-btn-top') });
-        items.push({ group: 'Account', label: 'Sign out', run: topBtnAction('auth-logout-btn') });
+        items.push({ group: 'Account', label: '打开账户 / 我的建筑', run: topBtnAction('account-btn') });
+        items.push({ group: 'Account', label: '登录', run: topBtnAction('auth-login-btn-top') });
+        items.push({ group: 'Account', label: '退出登录', run: topBtnAction('auth-logout-btn') });
       }
       return items;
     }
