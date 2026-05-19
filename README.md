@@ -1,115 +1,148 @@
-# Tiny World Builder
+# 迷你世界构建器 🌍
 
-<img width="1324" height="1016" alt="Screenshot 2026-05-11 at 07 09 24" src="https://github.com/user-attachments/assets/1b19a5f7-def5-42bf-b85f-01714f502afa" />
+[![Star](https://img.shields.io/github/stars/BOBcool1989/tiny-world-builder?style=social)](https://github.com/BOBcool1989/tiny-world-builder)
 
-## Run
+> 浏览器里的 3D 体素世界构建器，基于 [jasonkneen/tiny-world-builder](https://github.com/jasonkneen/tiny-world-builder) 本地化
+
+### [👉 在线体验](http://110.42.230.2:8090/)
+
+![3D体素世界](https://github.com/user-attachments/assets/1b19a5f7-def5-42bf-b85f-01714f502afa)
+
+---
+
+## 能做什么
+
+- 🏗️ **拖放搭建** — 体素方块搭建筑、地形、农场
+- 🌿 **多种地形** — 草地/沙地/水域/熔岩/雪地
+- 🐄 **农场经营** — 养牛羊、种南瓜玉米向日葵
+- 🤖 **AI 生成** — 输入一句话，自动生成完整世界（MiniMax / OpenAI / Anthropic / xAI）
+- 📐 **程序化生成** — 点击即生成，无需任何 API Key
+- 🌦️ **天气系统** — 晴天/雨天/雪天，实时切换
+- 💾 **存档导入导出** — 浏览器本地存储，分享给朋友
+
+---
+
+## 快速部署
+
+### 方式一：直接打开（最简单）
+
+下载本仓库，浏览器直接打开 `tiny-world-builder.html`
 
 ```bash
-npm run dev
-# serves http://localhost:3000/tiny-world-builder
-# use another port with: npm run dev -- 3001
-
-# or open directly
+git clone https://github.com/BOBcool1989/tiny-world-builder.git
+cd tiny-world-builder
+# macOS
 open tiny-world-builder.html
+# Linux
+xdg-open tiny-world-builder.html
+# Windows
+start tiny-world-builder.html
 ```
 
-## Deploy
-
-The app deploys as a static site on Vercel or Netlify. Both host configs run
-`./publish.sh` and serve the generated `dist/` directory. Three.js r128 and
-GLTFLoader are self-hosted from `vendor/three/` so deploys do not depend on
-runtime CDNs.
+### 方式二：本地服务
 
 ```bash
-npm test
-npm run build
-
-# Vercel
-vercel deploy
-
-# Netlify
-netlify deploy --build
-# or connect the repo in Netlify; netlify.toml supplies build/publish settings
+cd tiny-world-builder
+python3 -m http.server 8080
+# 浏览器访问 http://localhost:8080
 ```
 
-## Controls
+### 方式三：部署到自己的服务器
 
-| Action            | Input                                  |
-| ----------------- | -------------------------------------- |
-| Place             | click a cell                           |
-| Erase             | `E` then click, or pick the eraser     |
-| Orbit             | drag                                   |
-| Zoom              | scroll wheel                           |
-| Stack/enhance item | click the same object tool on an existing object (max 8) |
-| Raise/lower terrain | `R` / `F` over the hovered cell      |
-| Switch tool       | `1`–`9`, then letter shortcuts shown in the toolbar |
-| Toggle camera     | `P` or `I` (isometric ⇄ soft ⇄ perspective) |
-| Reset to preset   | reset button                           |
-| Clear to grass    | `C`                                    |
+把整个仓库传到你的 Web 服务器目录（如 `/var/www/tiny-world-builder/`），nginx 配置：
 
-## Tools
-
-`Grass` · `Path` · `Dirt` · `Water` · `Stone` · `Lava` · `Sand` · `Snow` ·
-`House` · `Tree` · `Fence` · `Rock` · `Bridge` · `Crop` · `Corn` · `Wheat` ·
-`Pumpkin` · `Carrot` · `Sunflower` · `Tuft` · `Flower` · `Bush` · `Cow` ·
-`Sheep` · `Erase`.
-
-Terrain/object rules are normalized by the renderer: crops force dirt
-underneath, bridges force water, and ordinary objects do not float on water.
-Paths, shorelines, water foam, bridges, fences, castle walls, houses, and
-rocks are adjacency-aware — placing a neighbor re-renders surrounding cells
-so roads join, rivers get banks, bridge direction updates, fence walls connect,
-house clusters form L/T/+/square buildings, and rock cells grow into craggy
-outcrops.
-
-## Architecture
-
-Single `<script>` block, currently ~16k lines of vanilla JS, organised by section
-comments (`// -------- xyz --------`). The model is split cleanly:
-
-- **`world[x][z]`** — intent: `{ terrain, kind, floors }` per cell.
-- **`cellMeshes['x,z']`** — rendered Three.js groups for each cell.
-- **`setCell(x, z, opts)`** — single mutation entry point. Updates `world`,
-  rebuilds the cell's tile/object meshes, and re-renders any neighbors that
-  care about adjacency (fence/house clusters).
-
-House clusters use BFS (`bfsHouseCluster`) plus `tryComposite` (L/T/+) and
-`trySquare` to decide whether a group of house cells should render as a
-unified structure or stretched rectangles.
-
-A shared `dropAnims` queue ease-outs new tiles/objects into place. Other
-per-frame animations (tree sway, crop bob, smoke origin) check
-`obj.userData.landing` so they yield while a piece is still falling in.
-
-Newer systems are still routed through that same contract:
-
-- **Preview boards** lazily generate surrounding boards as the camera pans; preview distance/window/opacity settings auto-scale from board size but remain user-adjustable.
-- **AI generation / Auto** validate sparse v4 worlds against the embedded schema.
-- **Local world slots** keep multiple named saves in browser storage.
-- **Weather, time, clouds, and crop duster** are decorative scene systems layered on the same renderer.
-- **Command palette** indexes tools, views, settings, and terrain raise/lower actions.
-
-## Validation
-
-```bash
-npm test        # syntax, schema parity, local assets, static smoke checks
-npm run build   # publish checks + dist generation
+```nginx
+server {
+    listen 8090;
+    server_name _;
+    root /var/www/tiny-world-builder;
+    index tiny-world-builder.html;
+    location / {
+        add_header Access-Control-Allow-Origin *;
+        try_files $uri $uri/ =404;
+    }
+}
 ```
 
-Manual browser smoke checklist after visual changes: page loads with no console
-errors; place/erase works; `C`, `P`/`I`, `R`/`F`, and tool shortcuts respond;
-fence neighbors update; cloud shadow at 0% still leaves visible clouds.
+---
 
-See [AGENTS.md](./AGENTS.md) for guidance on extending the codebase.
+## AI 生成功能
 
-## Files
+### 支持的 AI 提供商
+
+| 提供商 | 默认模型 | 说明 |
+|--------|---------|------|
+| **MiniMax** | MiniMax-M2.7 | 🇨🇳 国内可用，推荐 |
+| OpenAI | gpt-5.5 | 需国际网络 |
+| Anthropic | claude-opus-4-7 | 需国际网络 |
+| xAI | grok-4.3-latest | 需国际网络 |
+
+### 使用方法
+
+1. 打开 `设置` → `AI` 页签
+2. 选择提供商，填入你的 API Key
+3. 返回主界面，点击 `生成` → `AI 生成`
+4. 输入世界描述（如"有河流的村庄"），等待 AI 生成
+
+> MiniMax API Key 获取：https://platform.minimax.chat（免费额度）
+
+### 程序化生成（无需 API Key）
+
+`生成` → `程序化` — 完全离线，任意使用
+
+---
+
+## 技术栈
+
+- **Three.js** r128 — 3D 渲染
+- **纯原生 JS** — ~16k 行，无框架依赖
+- **单 HTML 文件** — 零构建，浏览器直开
+- **AGPL-3.0** 开源协议
+
+---
+
+## 项目结构
 
 ```
-tiny-world-builder.html          the app
-README.md                        this file
-AGENTS.md                        guidance for AI coding agents
-world.schema.json                import/export schema mirrored into the app
-tools/check.js                   static syntax/schema/asset check
-tools/smoke-static.js            no-browser smoke guard for key app contracts
-vendor/three/                    self-hosted Three.js r128 runtime files
+tiny-world-builder.html   # 主应用
+world.schema.json        # 存档格式定义
+vendor/three/            # Three.js 运行时（自托管，不依赖 CDN）
+sounds/                  # 音效
+models/                  # 3D 模型
+plugins/                 # 插件
+tools/                   # 静态检查脚本
 ```
+
+---
+
+## 控制说明
+
+| 操作 | 按键 |
+|------|------|
+| 放置方块 | 点击格子 |
+| 擦除 | `E` 然后点击，或选橡皮擦 |
+| 旋转视角 | 拖拽 |
+| 缩放 | 滚轮 |
+| 升高/降低地形 | `R` / `F` |
+| 切换视角 | `P`（等距）或 `I`（透视） |
+| 清空为草地 | `C` |
+| 打开命令面板 | `⌘ K` |
+
+---
+
+## License
+
+基于 [jasonkneen/tiny-world-builder](https://github.com/jasonkneen/tiny-world-builder) 进行本地化改编。
+
+- 源码修改版本遵循 **AGPL-3.0** 协议开源
+- 网络使用必须开源修改版本源码
+
+---
+
+## 关注作者
+
+📕 **小红书**：[上杉的小马驹🐴](https://www.xiaohongshu.com/user/profile/xxx)  
+🌐 **在线体验**：[http://110.42.230.2:8090/](http://110.42.230.2:8090/)  
+💻 **GitHub**：[BOBcool1989/tiny-world-builder](https://github.com/BOBcool1989/tiny-world-builder)
+
+有问题或建议？欢迎提 Issue！
