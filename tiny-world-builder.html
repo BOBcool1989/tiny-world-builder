@@ -2847,7 +2847,7 @@
       || host === '127.0.0.1'
       || host === '[::1]'
       || host.endsWith('.local');
-    let enabled = isLocal;
+    let enabled = true; // AI always enabled in this build
     try {
       const flag = window.__TWB_ENABLE_AI_INTERFACES__;
       if (typeof flag === 'boolean') enabled = flag;
